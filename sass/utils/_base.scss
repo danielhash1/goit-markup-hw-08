@@ -1,0 +1,129 @@
+/*Обнулення стилів браузера*/
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+// img {
+//     display: block;
+//     width: 100%;
+//     height: auto;
+// }
+
+// address {
+//     font-style: normal;
+// }
+
+/*Фон сторінки та головний шрифт*/
+.body-general {
+    background-color: getColor('content-color');
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: getFonts('general__font-family');
+    font-weight: getFonts('general__font-weight');
+    font-size: getFonts('general__font-size');
+    line-height: getFonts('general__line-height');
+    letter-spacing: getFonts('general__letter-spacing');
+    color: getColor('text-color__primary');
+
+    &::-webkit-scrollbar {
+        @media screen and (min-width: 320px) {
+            display: none;
+        }
+    }
+}
+
+/*Контейнер контенту - ширина 1200px*/
+.container {
+    // max-width: 1200px;
+    max-width: $mobile;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+        max-width: $tablet;
+    }
+
+    @media screen and (min-width: $desktop) {
+        max-width: $desktop;
+    }
+}
+
+/*Головний блок для контенту*/
+.main-content {
+    background-color: inherit;
+    flex: 1 0 auto; //Ця опція необхідна для того, щоб футер завжди був притиснутий до низу viewport при відсутності контенту
+    // Розширений запис властивості flex:
+    // flex-grow: 1; //Коефіцієнт розтягування - коефіцієнт збільшення ширини flex-елементу відносно інших flex-елементів.
+    // flex-shrink: 0; //Коефіцієнт звуження - коефіцієнт зменшення ширини flex-елементу щодо інших flex-елементів.
+    // flex-basis: auto; //Базова ширина flex-елемента.
+}
+
+/*Бокс для списків*/
+.box-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+}
+
+.box-list__item {
+    margin: 15px;
+}
+
+/*Бокс для зображень*/
+.box-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/*Бекдроп*/
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: getColor('box-shadow-3');
+    opacity: 1;
+    overflow-y: scroll;
+    @include transition-animation(opacity visibility);
+    // transition-property: opacity;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::-webkit-scrollbar {
+        @media screen and (min-width: 320px) {
+            display: none;
+        }
+    }
+}

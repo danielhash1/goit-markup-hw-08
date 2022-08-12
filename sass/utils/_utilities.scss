@@ -1,0 +1,118 @@
+/*Вказівник навігації для поточної сторінки*/
+.current {
+    color: getColor('general-color');
+    @include transition-animation(color);
+    // transition-property: color;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /*Декоративний елемент вказівника для навігації*/
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        // transform: translateY(44px);
+        height: 4px;
+        width: 100%;
+        background-color: getColor('general-color');
+        border-radius: 2px;
+        @include transition-animation(background-color);
+        // transition-property: background-color;
+        // transition-duration: 250ms;
+        // transition-timing-function:
+        //     cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:focus {
+        color: getColor('focus-color');
+    }
+
+    &:hover {
+        color: getColor('general-color');
+    }
+
+    &:focus::after {
+        background-color: getColor('focus-color');
+    }
+
+    &:hover::after {
+        background-color: getColor('general-color');
+    }
+}
+
+/*Приховування елементів*/
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/*Вказівник навігації для фільтра постерів*/
+.cheсked {
+    background: getColor('focus-color');
+    color: getColor('content-color');
+}
+
+/*Приховування модального вікна бекдропа*/
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    /*Модальне вікно*/
+    & .modal-box {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+/*Заборона прокрутки контенту поза бекдропом при відкритому модальному вікні*/
+.is-overflow {
+    overflow: hidden;
+}
+
+/*Заборона прокрутки контенту при відкритому мобільному меню*/
+.is-overflow-mobile {
+    @media screen and (max-width: calc($tablet - 1px)) {
+        overflow: hidden;
+    }
+}
+
+/*Анімації ховеру та фокусу для псевдоелемента навігації*/
+@keyframes animation-underline {
+    0% {
+        left: 0;
+        width: 0;
+        // transform: scaleX(0);
+        background-color: getColor('focus-color');
+    }
+
+    100% {
+        left: 0;
+        width: 100%;
+        // transform: scaleX(100);
+        background-color: getColor('focus-color');
+    }
+}
+
+@keyframes animation-underline-none {
+    0% {
+        right: 0;
+        width: 100%;
+        background-color: getColor('focus-color');
+    }
+
+    100% {
+        right: 0;
+        width: 0;
+        background-color: getColor('focus-color');
+    }
+}

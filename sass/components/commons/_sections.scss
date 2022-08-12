@@ -1,0 +1,119 @@
+/*Утилітна загальна секція*/
+.section {
+    // padding: 94px 0;
+    padding: 60px 0;
+
+    @media screen and (min-width: $desktop) {
+        padding: 94px 0;
+    }
+}
+
+/*Замовлення*/
+.section-order {
+    /*height: 600px;*/
+    // padding: 200px 0;
+    padding: 118px 0;
+    text-align: center;
+    background-color: getColor('section-fon__primary');
+    background-image:
+        linear-gradient(to right,
+            getColor('box-shadow-8'),
+            getColor('box-shadow-8')),
+        url("../images/order/photomobile(1x)_480.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media screen and (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            background-image:
+                linear-gradient(to right,
+                    getColor('box-shadow-8'),
+                    getColor('box-shadow-8')),
+                url("../images/order/photomobile(2x)_960.jpg");
+        }
+
+    @media screen and (min-width: $mobile) {
+        background-size: auto;
+    }
+
+    @media screen and (min-width: $mobile) and (min-device-pixel-ratio: 2),
+        (min-width: $mobile) and (-webkit-min-device-pixel-ratio: 2), 
+        (min-width: $mobile) and (min-resolution: 192dpi), 
+        (min-width: $mobile) and (min-resolution: 2dppx) {
+            background-image:
+                linear-gradient(to right,
+                    getColor('box-shadow-8'),
+                    getColor('box-shadow-8')),
+                url("../images/order/photomobile(2x)_960.jpg");
+            background-size: contain;
+        }
+
+    @media screen and (min-width: $tablet) {
+        background-image:
+            linear-gradient(to right,
+                getColor('box-shadow-8'),
+                getColor('box-shadow-8')),
+            url("../images/order/phototablet(1x)_768.jpg");
+        background-size: contain;
+    }
+
+    @media screen and (min-width: $tablet) and (min-device-pixel-ratio: 2),
+        (min-width: $tablet) and (-webkit-min-device-pixel-ratio: 2),
+        (min-width: $tablet) and (min-resolution: 192dpi),
+        (min-width: $tablet) and (min-resolution: 2dppx) {
+            background-image:
+                linear-gradient(to right,
+                    getColor('box-shadow-8'),
+                    getColor('box-shadow-8')),
+                url("../images/order/phototablet(2x)_1536.jpg");
+            background-size: contain;
+        }
+
+    @media screen and (min-width: $desktop) {
+        padding: 200px 0;
+        background-image:
+            linear-gradient(to right,
+                getColor('box-shadow-8'),
+                getColor('box-shadow-8')),
+            url("../images/order/photodesktop(1x)_1600.jpg");
+        background-size: auto;
+    }
+
+    @media screen and (min-width: $desktop) and (min-device-pixel-ratio: 2),
+        (min-width: $desktop) and (-webkit-min-device-pixel-ratio: 2),
+        (min-width: $desktop) and (min-resolution: 192dpi),
+        (min-width: $desktop) and (min-resolution: 2dppx) {
+            background-image:
+                linear-gradient(to right,
+                    getColor('box-shadow-8'),
+                    getColor('box-shadow-8')),
+                url("../images/order/photodesktop(2x)_3200.jpg");
+            background-size: cover;
+        }
+
+    @media screen and (min-width: 1601px) and (min-device-pixel-ratio: 2),
+        (min-width: 1601px) and (-webkit-min-device-pixel-ratio: 2),
+        (min-width: 1601px) and (min-resolution: 192dpi),
+        (min-width: 1601x) and (min-resolution: 2dppx) {
+            background-size: contain;
+        }
+}
+
+/*Чим ми займаємося*/
+.section-our-work {
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+        display: block;
+        padding-top: 0;
+        padding-bottom: 94px;
+    }
+}
+
+/*Наша команда*/
+.section-team {
+    background-color: getColor('section-fon__secondary');
+}

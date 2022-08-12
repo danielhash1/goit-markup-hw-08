@@ -1,0 +1,129 @@
+/*Замовлення*/
+.button {
+    background: getColor('general-color');
+    padding: 10px 32px;
+    border: 0;
+    border-radius: 4px;
+    font-family: inherit;
+    font-weight: getFonts('header__font-weight');
+    font-size: getFonts('item__font-size');
+    line-height: getFonts('button-order__line-height');
+    letter-spacing: getFonts('unit__letter-spacing');
+    color: getColor('content-color');
+    // box-shadow:
+    //     0 4px 4px getColor('button__shadow-focus-color');
+    user-select: none;
+    cursor: pointer;
+    @include transition-animation(background-color box-shadow text-shadow);
+    // transition-property: background-color box-shadow text-shadow;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus,
+    &:hover, 
+    &:active {
+        background: getColor('focus-color');
+        box-shadow:
+            0 4px 4px getColor('button__shadow-color');
+    }
+
+    // &:hover {
+    //     background-image:
+    //         linear-gradient(getColor('general-color'),
+    //             getColor('gradient-color-1'));
+    // }
+
+    // &:active {
+    //     background-image:
+    //         linear-gradient(getColor('general-color'),
+    //             getColor('gradient-color-1'));
+    //     box-shadow:
+    //         inset 4px 4px 8px getColor('button__shadow-color'),
+    //         inset -4px 4px 4px getColor('button__shadow-color'),
+    //         inset 4px -4px 4px getColor('button__shadow-color'),
+    //         inset -4px -4px 4px getColor('button__shadow-color');
+    //     text-shadow:
+    //         4px 4px 4px getColor('button__shadow-color'),
+    //         -4px 4px 4px getColor('button__shadow-color'),
+    //         4px -4px 4px getColor('button__shadow-color'),
+    //         -4px -4px 4px getColor('button__shadow-color');
+    // }
+}
+
+/*Кнопка закриття модального вікна*/
+.button-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background: getColor('content-color');
+    border: 1px solid getColor('box-shadow-4');
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--logo-color);
+}
+
+.button-close__image {
+    display: inline-block;
+    // z-index: 1;
+    width: 11px;
+    height: 11px;
+    fill: currentColor;
+    @include transition-animation(fill);
+    // transition-property: fill;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-close:focus .button-close__image,
+.button-close:hover .button-close__image {
+    fill: getColor('general-color');
+}
+
+/*Кнопка меню на мобілках*/
+.button-menu {
+    display: inline-flex;
+    border: 0;
+    padding: 0;
+    background: inherit;
+    color: getColor('text-color__primary');
+    cursor: pointer;
+    @include transition-animation(color);
+
+    &.is-open {
+        z-index: 2;
+    }
+
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+
+    &:focus,
+    &:hover {
+        color: getColor('general-color');
+    }
+}
+
+.button-menu__image {
+    display: block;
+    fill: currentColor;
+}
+
+.button-menu .button-menu__icon-close {
+    display: none;
+}
+
+.button-menu.is-open .button-menu__icon-close {
+    display: block;
+}
+
+.button-menu.is-open .button-menu__icon-open {
+    display: none;
+}

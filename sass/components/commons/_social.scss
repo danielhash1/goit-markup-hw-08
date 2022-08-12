@@ -1,0 +1,67 @@
+/*Соціальці мережі*/
+.social-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 30px;
+    }
+}
+
+.social-list__item {
+    display: flex;
+    width: 44px;
+    height: 44px;
+
+    &:not(:first-child) {
+        margin-left: 10px;
+    }
+}
+
+.social-list__link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: getColor('social__icon-color');
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include transition-animation(color background-color);
+    // transition-property: color background-color;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        background-color:getColor('focus-color');
+        color: getColor('content-color');
+    }
+
+    &:hover {
+        background-color: getColor('general-color');
+    }
+
+    /*Футер - Приєднуйтесь*/
+    &--dark {
+        background-color: getColor('social-fon');
+        color: getColor('content-color');
+    }
+}
+
+.social-list__image {
+    display: block;
+    fill: currentColor;
+    @include transition-animation(fill);
+    // transition-property: fill;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        fill: currentColor;
+    }
+}

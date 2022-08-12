@@ -1,0 +1,36 @@
+/*Кадровий апарат*/
+.team-item {
+    width: 100%;
+    background-color: getColor('content-color');
+    box-shadow:
+        0 1px 3px getColor('box-shadow-1'),
+        0 1px 1px getColor('box-shadow-2'),
+        0 2px 1px getColor('box-shadow-3');
+    border-radius: 0 0 4px 4px;
+
+    @media screen and (min-width: $tablet) {
+        width: calc((100% - 60px) / 2);
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: calc((100% - 120px) / 4);
+    }
+}
+
+.team-item__name {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: inherit;
+    font-size: getFonts('item__font-size');
+    line-height: getFonts('item__line-height');
+    letter-spacing: getFonts('title__letter-spacing');
+    color: getColor('text-color__primary');
+
+    &--job {
+        padding-top: 0;
+        padding-bottom: 16px;
+        font-weight: getFonts('title__font-weight');
+        color: getColor('text-color__secondary');
+    }
+}

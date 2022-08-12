@@ -1,0 +1,55 @@
+/*Клієнти*/
+
+/*Клієнтура*/
+
+.client-item {
+    display: block;
+    width: calc((100% - 60px) / 2);
+    height: 92px;
+    margin: 15px;
+
+    @media screen and (min-width: $tablet) {
+        width: calc((100% - 90px) / 3);
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: calc((100% - 180px) / 6);
+    }
+}
+
+.client-item__link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 1px solid getColor('social__icon-color');
+    border-radius: 4px;
+    color: getColor('social__icon-color');
+    justify-content: center;
+    align-items: center;
+    @include transition-animation(color);
+    // transition-property: color;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+        outline: transparent;
+        border: 1px solid getColor('focus-color');
+        color: getColor('focus-color');
+    }
+
+    &:hover {
+        border: 1px solid getColor('general-color');
+        color: getColor('general-color');
+    }
+}
+
+.client-item__logo {
+    display: block;
+    fill: currentColor;
+
+    &:hover,
+    &:focus {
+        fill: currentColor;
+    }
+}

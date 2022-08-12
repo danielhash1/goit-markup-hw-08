@@ -1,0 +1,19 @@
+/*Наше покликання*/
+.work-item {
+    position: relative;
+    max-width: 370px;
+}
+
+.work-item__category {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    padding: 27px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: inherit;
+    letter-spacing: getFonts('title__letter-spacing');
+    color: getColor('content-color');
+    background-color: getColor('box-shadow-9');
+}

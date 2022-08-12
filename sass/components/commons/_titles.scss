@@ -1,0 +1,55 @@
+/*Замовлення*/
+.title-order {
+    margin: 0 auto 30px;
+    max-width: 310px;
+    font-weight: getFonts('unit__font-weight');
+    font-size: getFonts('logo__font-size');
+    line-height: getFonts('unit-mobile__line-height');
+    letter-spacing: getFonts('unit__letter-spacing');
+    text-transform: uppercase;
+    color: getColor('content-color');
+
+    @media screen and (min-width: $desktop) {
+        max-width: 600px;
+        font-size: getFonts('unit__font-size');
+        line-height: getFonts('unit__line-height');
+    }
+}
+
+/*Секції*/
+.title-section {
+    margin-bottom: 30px;
+    font-size: getFonts('title-mobile__font-size');
+    line-height: getFonts('title-mobile__line-height');
+    letter-spacing: getFonts('title__letter-spacing');
+    text-align: center;
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
+        font-size: getFonts('section-title__font-size');
+        line-height: getFonts('section-title__line-height');
+    }
+}
+
+/*Футер*/
+.title-footer {
+    font-size: inherit;
+    letter-spacing: getFonts('title__letter-spacing');
+    color: getColor('content-color');
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/*Модальне вікно*/
+.title-modal {
+    text-align: center;
+    font-size: getFonts('modal-title__font-size');
+    line-height: getFonts('title-modal__line-height');
+    letter-spacing: getFonts('title__letter-spacing');
+    color: getColor('text-color__primary');
+    margin-bottom: 12px;
+
+    @media screen and (min-width: $desktop) {
+        line-height: getFonts('modal-title__line-height');
+    }
+}

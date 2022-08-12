@@ -1,0 +1,38 @@
+/*Логотип*/
+.logo {
+    display: block;
+    font-family: getFonts('logo__font-family');
+    font-weight: getFonts('title__font-weight');
+    font-size: getFonts('logo-tablet__font-size');
+    line-height: getFonts('modal-label__line-height');
+    letter-spacing: getFonts('title__letter-spacing');
+    color: getFonts('logo-color');
+    @include transition-animation(transform);
+    // transition-property: transform;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: $desktop) {
+        font-size: getFonts('logo__font-size');
+        line-height: getFonts('logo__line-height');
+    }
+
+    &:focus {
+        transform: scale(1.1);
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.logo__prefix {
+    font-weight: getFonts('header__font-weight');
+    line-height: getFonts('logo-prefix__line-height');
+    color: getColor('general-color');
+
+    @media screen and (min-width: $desktop) {
+        line-height: getFonts('logo__line-height');
+    }
+}

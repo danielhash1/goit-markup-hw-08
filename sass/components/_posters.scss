@@ -1,0 +1,108 @@
+/*Постери*/
+.poster-item {
+    // max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: getColor('content-color');
+    border-bottom:
+        1px solid getColor('poster-item__border-color');
+    cursor: pointer;
+    @include transition-animation(box-shadow);
+    // transition-property: box-shadow;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: $tablet) {
+        width: calc((100% - 60px) / 2);
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: calc((100% - 90px) / 3);
+    }
+
+    &:hover {
+        box-shadow:
+            0 1px 1px getColor('box-shadow-1'),
+            0 4px 4px getColor('box-shadow-6'),
+            1px 4px 6px getColor('box-shadow-7');
+    }
+}
+
+.poster-item__overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.poster-item__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 77px 24px;
+    background-color: getColor('overlay-fon');
+    font-weight: getFonts('title__font-weight');
+    font-size: getFonts('title__font-size');
+    line-height: getFonts('poster-title__line-height');
+    letter-spacing: getFonts('title__letter-spacing');
+    color: getColor('content-color');
+    transform: translateY(101%);
+    @include transition-animation(transform);
+    // transition-property: transform;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (max-width: 336px) {
+        padding: 20px 24px;
+    }
+
+    @media screen and (min-width: 337px) and (max-width: 372px) {
+        padding: 44px 24px;
+    }
+
+    @media screen and (min-width: 373px) and (max-width: calc($mobile - 1px)) {
+        padding: 49px 24px;
+    }
+
+    @media screen and (min-width: $mobile) and (max-width: calc($tablet - 1px)) {
+        padding: 77px 24px;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: calc($desktop - 1px)) {
+        padding: 49px 24px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 63px 24px;
+    }
+}
+
+.poster-item:hover .poster-item__title {
+    transform: translateY(0);
+}
+
+.poster-item__label {
+    flex-grow: 1;
+    border-left: 1px solid getColor('poster-item__border-color');
+    border-right: 1px solid getColor('poster-item__border-color');
+    padding: 20px 23px 19px;
+}
+
+.poster-item__name {
+    margin: 0 0 4px;
+    font-size: getFonts('title__font-size');
+    line-height: getFonts('poster-name__line-height');
+    letter-spacing: getFonts('unit__letter-spacing');
+    color: getColor('text-color__primary');
+}
+
+.poster-item__category {
+    font-weight: getFonts('title__font-weight');
+    font-size: getFonts('item__font-size');
+    line-height: getFonts('poster-category__line-height');
+    letter-spacing: getFonts('title__letter-spacing');
+    color: getColor('text-color__secondary');
+}
